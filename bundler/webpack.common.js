@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/script.js'),
+  entry: path.resolve(__dirname, '../src/genesis.js'),
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
@@ -15,7 +16,14 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html'),
       minify: true,
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new TerserWebpackPlugin({
+      terserOptions: {
+        compress: { comparisons: false },
+        mangle: { safari10: true },
+        output: { comments: false },
+      }
+    })
   ],
   output: {
     filename: 'bundle.[contenthash].js',
@@ -33,7 +41,10 @@ module.exports = {
         // JS
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {presets: ['@babel/preset-react']}
+        }
       },
       {
         // CSS
