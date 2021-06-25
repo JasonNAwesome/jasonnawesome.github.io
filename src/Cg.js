@@ -8,16 +8,16 @@ import { useFrame } from '@react-three/fiber'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes } = useGLTF('./cg.glb')
+  const { nodes } = useGLTF('/cg.glb')
   // Attach this component to render-loop; then rotate mesh every frame
   useFrame((state, delta) => (group.current.rotation.y += 0.005))
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.dec_ship.geometry}>
+      <mesh position={[0,-2,0]} geometry={nodes.dec_ship.geometry}>
         <meshBasicMaterial color="black" wireframe={true}/>
       </mesh>
     </group>
   )
 }
 
-useGLTF.preload('./cg.glb')
+useGLTF.preload('/cg.glb')

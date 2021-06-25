@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { EffectComposer, Pixelation } from '@react-three/postprocessing'
@@ -34,10 +34,19 @@ function Box(props) {
 function Texto(props) {
   const font = new THREE.FontLoader().parse(AFont)
   const txtOptions = {font, size: 1, height: 0.75};
+  // Set up states
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
   return (
-    <mesh position={[-3,5,0]}>
+    <mesh {...props} 
+          position={[-3,4,0]}
+          ref={font}
+          onClick={(event) => setActive(window.open("https://twitter.com/jsn404"))}
+          onPointerOver={(event) => setHover(true)}
+          onPointerOut={(event) => setHover(false)}
+          >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color='blue' attach='material'/>
+      <meshBasicMaterial color={hovered ? 'red': 'blue'} attach='material'/>
     </mesh>
   )
 }
@@ -45,7 +54,7 @@ function Texto(props) {
 export default function App() {
     return (
         <Canvas>
-            <PerspectiveCamera makeDefault position={[0,6,16]}/>
+            <PerspectiveCamera makeDefault position={[0,5,16]}/>
             <OrbitControls />
             <Texto />
             <Suspense fallback={null}>
