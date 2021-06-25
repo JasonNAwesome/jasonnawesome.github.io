@@ -40,7 +40,6 @@ function Texto(props) {
   return (
     <mesh {...props} 
           position={[-4,4,0]}
-          ref={font}
           onClick={(event) => setActive(window.open("https://twitter.com/jsn404"))}
           onPointerOver={(event) => setHover(true)}
           onPointerOut={(event) => setHover(false)}
@@ -54,7 +53,7 @@ function Texto(props) {
 export default function App() {
     return (
         <Canvas>
-            <PerspectiveCamera makeDefault position={[0,5,16]}/>
+            <PerspectiveCamera makeDefault position={[0,5,18]}/>
             <OrbitControls />
             <Texto />
             <Suspense fallback={null}>
