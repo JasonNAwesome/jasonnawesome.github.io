@@ -1,3 +1,10 @@
-.yea {
-  color: aqua;
+* {
+  box-sizing: content-box;
 }
+
+html, body, #root, #webgl {
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+}
+
+body { background-color: #ffffff;}

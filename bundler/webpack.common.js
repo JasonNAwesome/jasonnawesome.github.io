@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/genesis.js'),
+  entry: path.resolve(__dirname, '../src/a1.js'),
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
@@ -16,17 +15,10 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html'),
       minify: true,
     }),
-    new MiniCssExtractPlugin(),
-    new TerserWebpackPlugin({
-      terserOptions: {
-        compress: { comparisons: false },
-        mangle: { safari10: true },
-        output: { comments: false },
-      }
-    })
+    new MiniCssExtractPlugin()
   ],
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: 'hko.[contenthash].js',
     path: path.resolve(__dirname, '../dist'),
     clean: true,
   },

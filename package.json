@@ -20,6 +20,7 @@
   "homepage": "https://github.com/jeibloo/blootron#readme",
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@react-three/drei": "^7.0.1",
     "@react-three/fiber": "^7.0.1",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",
@@ -39,5 +40,8 @@
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@react-three/postprocessing": "^2.0.4-alpha.2"
   }
 }
