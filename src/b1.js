@@ -39,7 +39,7 @@ function Texto(props) {
   const [active, setActive] = useState(false);
   return (
     <mesh {...props} 
-          position={[-3,4,0]}
+          position={[-4,4,0]}
           ref={font}
           onClick={(event) => setActive(window.open("https://twitter.com/jsn404"))}
           onPointerOver={(event) => setHover(true)}
@@ -61,7 +61,7 @@ export default function App() {
                 <Model />
             </Suspense>
             <EffectComposer>
-                <Pixelation granularity={2}/>
+                <Pixelation granularity={4}/>
             </EffectComposer>
         </Canvas>
     )

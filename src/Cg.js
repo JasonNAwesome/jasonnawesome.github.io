@@ -13,7 +13,7 @@ export default function Model(props) {
   useFrame((state, delta) => (group.current.rotation.y += 0.005))
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh position={[0,-2,0]} geometry={nodes.dec_ship.geometry}>
+      <mesh position={[0,-2.5,0]} geometry={nodes.dec_ship.geometry}>
         <meshBasicMaterial color="black" wireframe={true}/>
       </mesh>
     </group>
