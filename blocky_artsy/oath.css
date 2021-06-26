@@ -1,0 +1,43 @@
+
+/* Fonts */
+@font-face {
+  font-family: "Kinako";
+  src: url('fonts/NuKinakoMochi/NuKinakoMochi-Reg.otf') format('opentype')
+}
+h1, h2, h3, h4, h5, p, a {
+  font-family: "Kinako";
+  font-size: 150%;
+}
+html, body {
+  background-color: #fcfcfc;
+  height: 100%; width: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%; width: 100%;
+}
+.col {
+  text-align: center;
+}
+#header {
+  margin-top: 5rem;
+  text-align: center;
+}
+#bigCol {
+  height: 90%;
+  border-radius: 5px;
+  background-color: #ef008b;
+}
+
+#lod {
+  margin: auto auto;
+  float: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 15px; right: 20px;
+}
+
+#urighti, #ulefti, #drighti, #dlefti {
+  padding: 10%;
+  padding-top: 25%;
+}
