@@ -17,7 +17,7 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
       minify: true,
-      favicon: './static/images/favicon-32x32.png'
+      favicon: './static/images/favicon.ico'
     }),
     new MiniCssExtractPlugin()
   ],
