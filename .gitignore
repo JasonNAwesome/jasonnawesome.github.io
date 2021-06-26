@@ -1,3 +1,4 @@
 node_modules
 static
 bundler/webpack.dev.js
+.DS_Store
