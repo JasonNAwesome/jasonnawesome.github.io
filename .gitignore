@@ -3,4 +3,5 @@ references
 typed.js-master
 *.svg
 *.xcf
+.DS_Store
 old
