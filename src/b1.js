@@ -6,31 +6,6 @@ import { FontLoader } from 'three'
 import Model from './Cg.js'
 import AFont from '../static/fonts/f.json'
 
-/*
-function Box(props) {
-  // Get direct access to mesh
-  const mesh = useRef();
-  // Set up states
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
-  // Attach this component to render-loop; then rotate mesh every frame
-  useFrame((stuate, delta) => (mesh.current.rotation.x += 0.01))
-  // Return view w/ 3js elements in JSX
-  return (
-    <mesh 
-      {...props} 
-      ref={mesh} 
-      scale={active ? 1.5 : 1} 
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-      >
-      <octahedronGeometry args={[.5,1]}/>
-      <meshStandardMaterial color={hovered ? 'blue': 'red'} />
-    </mesh>
-  )
-}
-*/
 function HelloEmail(props) {
   // Thanks drei
   const font = new FontLoader().parse(AFont)
@@ -60,25 +35,10 @@ function Texto(props) {
           onPointerOut={(event) => setHover(false)}
           >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color={hovered || active ? 'red' : '#01E0FF'} attach='material'/>
+      <meshBasicMaterial color={hovered || active ? 'cyan' : 'blue'} attach='material'/>
     </mesh>
   )
 }
-
-/*function DreiBillboard(props) {
-  const mesh = useRef()
-  useFrame(({ camera }) => {
-    if (mesh.current) {
-      const prev = {
-        x: mesh.current.rotation.x,
-        y: mesh.current.rotation.y,
-        z: mesh.current.rotation.z,
-      }
-      mesh.current.lookAt(camera.position)
-    }
-  })
-  return <Plane args={[1,1,1]} ref={[mesh]} {...props}/>
-}*/
 
 export default function App() {
     return (
