@@ -1,8 +1,8 @@
 import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera, Loader, Stars } from '@react-three/drei'
 import { EffectComposer, Pixelation } from '@react-three/postprocessing'
-import * as THREE from 'three'
+import { FontLoader } from 'three'
 import Model from './Cg.js'
 import AFont from '../static/fonts/f.json'
 
@@ -32,8 +32,8 @@ function Box(props) {
 }
 */
 function Texto(props) {
-  const font = new THREE.FontLoader().parse(AFont)
-  const txtOptions = {font, size: 1, height: 0.75};
+  const font = new FontLoader().parse(AFont)
+  const txtOptions = {font, size: 1, height: 0.5};
   // Set up states
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
@@ -45,23 +45,43 @@ function Texto(props) {
           onPointerOut={(event) => setHover(false)}
           >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color={hovered ? 'red': 'blue'} attach='material'/>
+      <meshBasicMaterial color={hovered ? 'red' : '#00BBFF'} attach='material'/>
     </mesh>
   )
 }
 
+/*function Floor(props) {
+  const Mesh = React.useRef()
+  return (
+    <mesh ref={Mesh} {...props}>
+      <Plane args={[1,1,1,1]} position={[0,0,0]}>
+        <meshBasicMaterial color={'grey'} attach='material'/>
+      </Plane>
+    </mesh>
+  );
+}*/
+
 export default function App() {
     return (
-        <Canvas>
-            <PerspectiveCamera makeDefault position={[0,5,18]}/>
-            <OrbitControls />
-            <Texto />
-            <Suspense fallback={null}>
-                <Model />
-            </Suspense>
-            <EffectComposer>
-                <Pixelation granularity={4}/>
-            </EffectComposer>
-        </Canvas>
+      <Canvas gl={
+        {antialias: false}, 
+        {setPixelRatio: (Math.min(window.devicePixelRatio, 2))},
+        {powerPreference: 'low-power'}
+      }
+        >
+          <PerspectiveCamera makeDefault 
+            position={[0,5,20]}
+            frustumCulled={true}
+            />
+          <OrbitControls />
+          <Texto />
+          <Suspense fallback={null}>
+              <Model />
+          </Suspense>
+          <EffectComposer>
+              <Pixelation granularity={3}/>
+          </EffectComposer>
+          <Stars radius={100} depth={5} count={500} factor={10} saturation={1} fade />
+      </Canvas>
     )
 }

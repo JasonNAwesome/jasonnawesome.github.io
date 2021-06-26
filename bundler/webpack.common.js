@@ -4,17 +4,20 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/a1.js'),
+  entry: {
+    index: path.resolve(__dirname, '../src/a1.js'),
+  },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: path.resolve(__dirname, '../static')}
+        { from: path.resolve(__dirname, '../static'), to: '.'},
       ]
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
-      favicon: 'static/images/favicon_package_v0.16/favicon-32x32.png',
+      filename: 'index.html',
       minify: true,
+      favicon: './static/images/favicon-32x32.png'
     }),
     new MiniCssExtractPlugin()
   ],
@@ -22,6 +25,9 @@ module.exports = {
     filename: 'hko.[contenthash].js',
     path: path.resolve(__dirname, '../docs'),
     clean: true,
+  },
+  optimization: {
+    usedExports: true,
   },
   module: {
     rules: [

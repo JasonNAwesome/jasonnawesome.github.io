@@ -1,8 +1,7 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
-const { plugins } = require('./webpack.common.js');
-//const TerserWebpackPlugin = require('terser-webpack-plugin');
 const common = require('./webpack.common.js');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   mode: 'production',
@@ -19,15 +18,7 @@ module.exports = merge(common, {
       }),
     ],
   },
-  //devtool: 'source-map',
-  /*plugins: [
-    new TerserWebpackPlugin({
-      terserOptions: {
-        compress: { comparisons: true },
-        mangle: { safari10: true },
-        output: { comments: false },
-      }
-    })
-  ]*/
-  },
-);
+  plugins: [
+    new BundleAnalyzerPlugin(),
+  ],
+});
