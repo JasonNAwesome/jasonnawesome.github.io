@@ -34,7 +34,7 @@ function Box(props) {
 function HelloEmail(props) {
   // Thanks drei
   const font = new FontLoader().parse(AFont)
-  const txtOptions = {font, size: 1, height: 0.05};
+  const txtOptions = {font, size: 1, height: 0};
   return (
     <mesh {...props} 
           position={[0,2,16]}
@@ -48,7 +48,7 @@ function HelloEmail(props) {
 }
 function Texto(props) {
   const font = new FontLoader().parse(AFont)
-  const txtOptions = {font, size: 1, height: 0};
+  const txtOptions = {font, size: 1, height: .5};
   // Set up states
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
@@ -99,7 +99,7 @@ export default function App() {
               <Model />
           </Suspense>
           <EffectComposer>
-              <Pixelation granularity={4}/>
+              <Pixelation granularity={3}/>
           </EffectComposer>
           <Stars radius={100} depth={5} count={500} factor={10} saturation={1} fade />
       </Canvas>
