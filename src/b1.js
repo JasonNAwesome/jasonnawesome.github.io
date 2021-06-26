@@ -60,7 +60,7 @@ function Texto(props) {
           onPointerOut={(event) => setHover(false)}
           >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color={hovered || active ? 'red' : '#00BBFF'} attach='material'/>
+      <meshBasicMaterial color={hovered || active ? 'red' : '#01E0FF'} attach='material'/>
     </mesh>
   )
 }
@@ -101,7 +101,7 @@ export default function App() {
           <EffectComposer>
               <Pixelation granularity={3}/>
           </EffectComposer>
-          <Stars radius={100} depth={5} count={500} factor={10} saturation={1} fade />
+          <Stars radius={100} depth={5} count={2000} factor={10} saturation={1} fade />
       </Canvas>
     )
 }
