@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Loader, Stars } from '@react-three/drei'
+import { Canvas} from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei'
 import { EffectComposer, Pixelation } from '@react-three/postprocessing'
 import { FontLoader } from 'three'
 import Model from './Cg.js'
@@ -31,34 +31,53 @@ function Box(props) {
   )
 }
 */
+function HelloEmail(props) {
+  // Thanks drei
+  const font = new FontLoader().parse(AFont)
+  const txtOptions = {font, size: 1, height: 0.05};
+  return (
+    <mesh {...props} 
+          position={[0,2,16]}
+          rotateY={Math.PI / 2}
+          scale={.05}
+          >
+      <textGeometry attach='geometry' args={['jason@blootron.com', txtOptions]}/>
+      <meshBasicMaterial color={'royalblue'} attach='material'/>
+    </mesh>
+  )
+}
 function Texto(props) {
   const font = new FontLoader().parse(AFont)
-  const txtOptions = {font, size: 1, height: 0.5};
+  const txtOptions = {font, size: 1, height: 0};
   // Set up states
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   return (
     <mesh {...props} 
           position={[-4,4,0]}
-          onClick={(event) => setActive(window.open("https://twitter.com/jsn404"))}
+          onClick={(event) => setActive(window.open('https://twitter.com/jsn404'))}
           onPointerOver={(event) => setHover(true)}
           onPointerOut={(event) => setHover(false)}
           >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color={hovered ? 'red' : '#00BBFF'} attach='material'/>
+      <meshBasicMaterial color={hovered || active ? 'red' : '#00BBFF'} attach='material'/>
     </mesh>
   )
 }
 
-/*function Floor(props) {
-  const Mesh = React.useRef()
-  return (
-    <mesh ref={Mesh} {...props}>
-      <Plane args={[1,1,1,1]} position={[0,0,0]}>
-        <meshBasicMaterial color={'grey'} attach='material'/>
-      </Plane>
-    </mesh>
-  );
+/*function DreiBillboard(props) {
+  const mesh = useRef()
+  useFrame(({ camera }) => {
+    if (mesh.current) {
+      const prev = {
+        x: mesh.current.rotation.x,
+        y: mesh.current.rotation.y,
+        z: mesh.current.rotation.z,
+      }
+      mesh.current.lookAt(camera.position)
+    }
+  })
+  return <Plane args={[1,1,1]} ref={[mesh]} {...props}/>
 }*/
 
 export default function App() {
@@ -75,11 +94,12 @@ export default function App() {
             />
           <OrbitControls />
           <Texto />
+          <HelloEmail />
           <Suspense fallback={null}>
               <Model />
           </Suspense>
           <EffectComposer>
-              <Pixelation granularity={3}/>
+              <Pixelation granularity={4}/>
           </EffectComposer>
           <Stars radius={100} depth={5} count={500} factor={10} saturation={1} fade />
       </Canvas>

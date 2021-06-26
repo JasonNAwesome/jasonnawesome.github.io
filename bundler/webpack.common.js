@@ -11,12 +11,13 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: path.resolve(__dirname, '../static'), to: '.'},
+        { from: 'CNAME', to: '.'},
       ]
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
-      minify: true,
+      minify: false,
       favicon: './static/images/favicon.ico'
     }),
     new MiniCssExtractPlugin()
