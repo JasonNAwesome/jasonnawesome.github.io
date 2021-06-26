@@ -1,0 +1,139 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fffeef;
+}
+h1, h2, h3 { font-weight: 900; color: #ffffff; height: auto;}
+h1 { font-size: 40rem; } h2 { font-size: 15rem; } h3 { font-size: 10rem; }
+h3 {
+  background: url(img/COLUMNS.gif); background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+p {font-weight: 700; font-size: 110%; background-color: #020207; color: #ffffff;}
+body {
+  background-image: radial-gradient(rgba(125, 15, 025, .5) 15%, transparent 1%), radial-gradient(rgba(000, 000, 025, 1) 5%, transparent 6%);
+  background: url(img/text994.png);
+}
+#abc, #abc2 {
+  text-align: center;
+  height: 75rem;
+  border-radius: 5px;
+}
+#abc2 {
+  line-height: 10%;
+}
+#JSN {
+  background: url(img/MCE027.gif); background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+#JSN2, #NVdi2 {
+  transform: rotate(180deg);
+  position: relative; top: 5rem;
+  z-index: -2;
+}
+#NVdi {
+  position: relative; bottom: 5rem;
+  background: url(img/ESCHER02.gif); background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+#doto {
+  position: relative; bottom: 2.5rem;
+}
+#circle {
+  width: 50px; height: 50px;
+  background-image: url(img/XYZ1.gif);
+  position: relative; bottom: -2rem;
+  margin-left: auto; margin-right: auto;
+  border-radius: 100%;
+}
+#efg, #hij, #hij2 {
+  background-image: url(img/XYZ1.gif);
+}
+#efg {
+  background-color: #f3a4fe;
+  text-align: center;
+  position: relative; bottom: 15rem;
+  margin-left: 10rem; margin-right: auto;
+  padding: 3rem;
+  width: 25rem; height: 10rem;
+}
+#hij {
+  background-color: #fea4a4;
+  text-align: left;
+  position: relative; bottom: 25rem;
+  margin-right: 15rem; margin-left: auto;
+  padding: 2rem;
+  width: 12rem; height: 15rem;
+}
+#hij2 {
+  background-color: #fea4a4;
+  position: relative;
+  bottom: 1rem;
+  padding: 1rem;
+  width: 20rem; height: 5rem;
+}
+#lod {
+  margin: auto auto;
+  float: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 25px; left: 20px;
+}
+/* Phone and Portrait screens */
+@media screen
+  and (min-device-width: 200px)
+  and (max-device-width: 450px) {
+    html, body {width: 100%; height: 100%;}
+    body {background-size: 3rem;}
+    h1 {font-size: 12rem;}
+    h2 {font-size: 8rem;}
+    h3 {font-size: 4rem;}
+    p {font-size: 1rem;}
+    #abc {
+      height: 40rem;
+      margin-left: auto; margin-right: auto;
+    }
+    #NVdi {position: relative; bottom: 0rem; margin: auto;}
+    #doto {position: relative; bottom: 0rem;}
+    #efg {
+      margin: 0; padding: 0;
+      height: 5rem; width: 15rem;
+      bottom: -3rem; left: 3rem;
+    }
+    #hij, #hij2 {
+      margin: 0; padding: 0;
+      height: 5rem;
+    }
+    #hij {
+      bottom: -7rem;
+      width: 5rem;
+      right: -8rem;
+    }
+    #abc2 {display: none;}
+}
+@media screen
+  and (min-device-width: 600px)
+  and (max-device-width: 767px) {
+}
+/* Tablet screens */
+@media screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1366px) {
+}
+/* Non-retina screens */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ration: 1) {
+    h1 {font-size: 20rem;}
+}
+
+/* High-res screens (but not retina)*/
+@media screen
+  and (min-device-width: 1600px)
+  and (max-device-width: 3600px) {
+}
+/* Retina! Thx CSS tricks*/
+@media 
+(-webkit-min-device-pixel-ration: 2),
+(min-resolution: 192dpi) {
+}
