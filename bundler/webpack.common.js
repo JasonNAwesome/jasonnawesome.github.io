@@ -17,8 +17,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
-      minify: false,
-      favicon: './static/images/favicon.ico'
+      minify: false
     }),
     new MiniCssExtractPlugin()
   ],
@@ -55,10 +54,7 @@ module.exports = {
         // PICS
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [{
-          loader: 'file-loader',
-          options: {
-            outputPath: 'static/images/'
-          }
+          loader: 'file-loader'
         }]
       },
       {
@@ -71,10 +67,7 @@ module.exports = {
         // FONTS
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         use: [{
-          loader: 'file-loader',
-          options: {
-            outputPath: 'static/fonts/'
-          }
+          loader: 'file-loader'
         }]
       }
     ]
