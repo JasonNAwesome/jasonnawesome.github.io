@@ -29,13 +29,13 @@ function Texto(props) {
   const [active, setActive] = useState(false);
   return (
     <mesh {...props} 
-          position={[-4,4,0]}
+          position={[-4,6,0]}
           onClick={(event) => setActive(window.open('https://twitter.com/jsn404'))}
           onPointerOver={(event) => setHover(true)}
           onPointerOut={(event) => setHover(false)}
           >
       <textGeometry attach='geometry' args={['blootron', txtOptions]}/>
-      <meshBasicMaterial color={hovered || active ? 'cyan' : 'blue'} attach='material'/>
+      <meshBasicMaterial color={hovered || active ? 'cyan' : '#4a1cff'} attach='material'/>
     </mesh>
   )
 }
