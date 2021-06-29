@@ -54,7 +54,10 @@ module.exports = {
         // PICS
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [{
-          loader: 'file-loader'
+          loader: 'file-loader',
+          options: {
+            outputPath: 'static/images/'
+          }
         }]
       },
       {
@@ -67,7 +70,10 @@ module.exports = {
         // FONTS
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         use: [{
-          loader: 'file-loader'
+          loader: 'file-loader',
+          options: {
+            outputPath: 'static/fonts/'
+          }
         }]
       }
     ]
