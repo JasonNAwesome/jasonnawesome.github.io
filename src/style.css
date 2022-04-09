@@ -6,7 +6,137 @@ html, body, #root, #webgl {
   width: 100%; height: 100%;
   margin: 0; padding: 0;
   overflow: hidden;
+  background-color: black;
   touch-action: pan-x;
 }
+p {
+  color: whitesmoke;
+}
 
-body { background-color: #102088;}
+.loading-screen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.blootron_gif {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: 25%;
+  background-position-y: 10%;
+  background-image: url(../static/gifs/blootron.gif);
+}
+.loading_gif {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: 75%;
+  background-position-y: 95%;
+  background-image: url(../static/gifs/loading.gif);
+}
+.loading-screen.end {
+  transform: scale(0,0);
+}
+
+.navigation-screen {
+  position: absolute;
+  height: 0%;
+  width: 30%;
+  bottom: 0%;
+  left: 35%;
+}
+
+.title-gif {
+  position: absolute;
+  top: 0%;
+  height: 0%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: 50%;
+  background-position-y: 95%;
+  background-image: url(../static/gifs/hello.gif);
+}
+
+#home {
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  margin-top: 5%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url(../static/gifs/return.gif)
+}
+#art {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url(../static/UI_v2/optimised/pen_ON.png);
+}
+#computer {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url(../static/UI_v2/optimised/keeb_ON.png);
+}
+#social {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url(../static/UI_v2/optimised/phone_ON.png);
+}
+
+@keyframes screenOnTop {
+  0% {height: 0%;}
+  100% {height: 15%;}
+}
+@keyframes screenOnBot {
+  0% {height: 0%;}
+  100% {height: 10%;}
+}
+
+.title-gif.loaded {
+  animation: screenOnTop 4s forwards;
+}
+.navigation-screen.loaded {
+  animation: screenOnBot 4s forwards;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  text-align: center;
+  width: 0%;
+}

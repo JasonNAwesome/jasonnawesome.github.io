@@ -42,7 +42,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {presets: ['@babel/preset-react']}
+          /*options: {presets: ['@babel/preset-react']}*/
         }
       },
       {
@@ -56,7 +56,8 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            outputPath: 'static/images/'
+            outputPath: 'static/images/',
+            name: '[name].[ext]'
           }
         }]
       },
