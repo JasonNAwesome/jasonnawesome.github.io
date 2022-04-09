@@ -62,7 +62,6 @@ const artSection = document.getElementById('art')
 
 const titleElement = document.querySelector('.title-gif')
 const titleLinkElement = document.getElementById('title-link')
-console.log(titleLinkElement)
 
 const cameraHome = new THREE.Vector3(-10, 12, 10) // CAMERA HOME
 const targetHome = new THREE.Vector3(5, 6, -5) // TARGET HOME
@@ -90,7 +89,6 @@ function clickActions(meshPos, changers, secNum) {
         controls.minAzimuthAngle = Infinity
 
         titleElement.style.backgroundImage = 'url(static/images/hello.gif)'
-        console.log()
     }
     else {
         meshPos.getCenter(mesh_vec)
@@ -111,7 +109,6 @@ function clickActions(meshPos, changers, secNum) {
 
         if(secNum === 1) {
             titleElement.style.backgroundImage = 'url(static/images/email.gif)'
-            titleElement.style.
             titleLinkElement.href = 'https://twitter.com/jsn404'
         }
         if(secNum === 2) {
