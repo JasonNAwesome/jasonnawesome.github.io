@@ -89,7 +89,7 @@ p {
   background: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-size: auto;
-  background-image: url(../static/UI_v2/optimised/pen_ON.png);
+  background-image: url(../static/optimised/pen_ON.png);
 }
 #computer {
   position: absolute;
@@ -100,7 +100,7 @@ p {
   background: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-size: auto;
-  background-image: url(../static/UI_v2/optimised/keeb_ON.png);
+  background-image: url(../static/optimised/keeb_ON.png);
 }
 #social {
   position: absolute;
@@ -111,7 +111,7 @@ p {
   background: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-size: auto;
-  background-image: url(../static/UI_v2/optimised/phone_ON.png);
+  background-image: url(../static/optimised/phone_ON.png);
 }
 
 @keyframes screenOnTop {
