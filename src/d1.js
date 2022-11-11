@@ -83,8 +83,8 @@ function clickActions(meshPos, changers, secNum) {
 
         camera.fov = 45
         camera.zoom = 1
+        controls.autoRotateSpeed = 0.1
         camera.updateProjectionMatrix()
-        controls.autoRotateSpeed = 2
         controls.maxAzimuthAngle = Infinity
         controls.minAzimuthAngle = Infinity
 
@@ -109,7 +109,7 @@ function clickActions(meshPos, changers, secNum) {
 
         if(secNum === 1) {
             titleElement.style.backgroundImage = 'url(static/images/email.gif)'
-            titleLinkElement.href = 'https://twitter.com/jsn404'
+            titleLinkElement.href = 'https://infosec.exchange/@jn'
         }
         if(secNum === 2) {
             titleElement.style.backgroundImage = 'url(static/images/code.gif)'
@@ -117,7 +117,7 @@ function clickActions(meshPos, changers, secNum) {
         }
         if(secNum === 3) {
             titleElement.style.backgroundImage = 'url(static/images/construction.gif)'
-            titleLinkElement.href = 'https://twitter.com/jsn404'
+            titleLinkElement.href = 'https://infosec.exchange/@jn'
         }
     }
 }
@@ -334,6 +334,7 @@ scene.add(camera)
 const controls = new OrbitControls(camera, canvas)
 controls.target.set(cameraTarget.x, cameraTarget.y, cameraTarget.z)
 controls.autoRotate = true
+controls.autoRotateSpeed = 0.35
 controls.update()
 
 /**
